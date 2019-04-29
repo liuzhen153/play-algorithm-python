@@ -1,2 +1,7 @@
 # play-algorithm
-让我们一起玩转算法
+
+### 以最简单的方式走进算法的世界，边玩边成长
+
+![alt text][bubble-toptal]
+
+[bubble-toptal]: https://www.toptal.com/developers/sorting-algorithms/bubble-sort
