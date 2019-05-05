@@ -64,15 +64,15 @@
 * 网页排名
 * 汉诺塔
 
-## 参考附录
-
-* 【书籍】我的第一本算法书
-* 【网站】[The Algorithms - Python](https://github.com/TheAlgorithms/Python)
-* 【网站】[维基百科](https://zh.wikipedia.org)
-* 【网站】[百度百科](https://baike.baidu.com/)
-
 ## Changelog
 日期|内容
 --|--
 2019-04-29|项目成立，contributor: [liuzhen153](https://github.com/liuzhen153) [chaochaoZ](https://github.com/chaochaoZ)
 2019-05-05|1.基础目录确认<br>2.新增wiki contributor: [wsqstar](https://github.com/wsqstar)<br>3.完成算法理论
+
+
+## 参考附录
+* 【书籍】我的第一本算法书
+* 【网站】[The Algorithms - Python](https://github.com/TheAlgorithms/Python)
+* 【网站】[维基百科](https://zh.wikipedia.org)
+* 【网站】[百度百科](https://baike.baidu.com/)
