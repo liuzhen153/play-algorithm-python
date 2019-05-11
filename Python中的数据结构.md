@@ -8,7 +8,7 @@
 * 加号 + 是列表连接运算符，星号 * 是重复操作
 
 **实例**
-```python
+```
 list = ['play', 'algorithm', 'python', 2019, 5.11]
 author_list = ['Tommy', 'ChaoChao', 'Wsqstar']
 
