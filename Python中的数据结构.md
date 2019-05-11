@@ -17,13 +17,13 @@
 list = ['play', 'algorithm', 'python', 2019, 5.11, 'python']
 author_list = ['Tommy', 'ChaoChao', 'Wsqstar']
 
-# 正数操作
+# 正数操作，截取不包含冒号右侧
 print('完整列表 list：' , list)
 print('第二个元素 list[1]：' , list[1])
-print('第二个到第四个元素 list[1:3]：' , list[1:3])
+print('第二个到第四个元素 list[1:4]：' , list[1:4])
 print('第三个到最后一个元素 list[2:]：' , list[2:])
 
-# 倒数操作，此时截取不包含冒号右侧
+# 倒数操作，截取不包含冒号右侧
 print('倒数第二个元素 list[-2]：' , list[-2])
 print('倒数最后三个元素 list[-3:]：' , list[-3:])
 print('倒数第二个到第四个元素 list[-4:-1]：' , list[-4:-1])
@@ -46,7 +46,7 @@ for item in author_list:
 ```
 完整列表 list： ['play', 'algorithm', 'python', 2019, 5.11, 'python']
 第二个元素 list[1]： algorithm
-第二个到第四个元素 list[1:3]： ['algorithm', 'python']
+第二个到第四个元素 list[1:4]： ['algorithm', 'python', 2019]
 第三个到最后一个元素 list[2:]： ['python', 2019, 5.11, 'python']
 
 倒数第二个元素 list[-2]： 5.11
