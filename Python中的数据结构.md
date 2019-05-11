@@ -7,29 +7,159 @@
 * 列表中值得切割可以用到变量`[头下标:尾下标]`，从左到右索引默认 0 开始，从右到左索引默认 -1 开始，下标可以为空表示取到头或尾
 * 加号 + 是列表连接运算符，星号 * 是重复操作
 
-**实例**
-```
-list = ['play', 'algorithm', 'python', 2019, 5.11]
+## 基础操作
+
+```python
+list = ['play', 'algorithm', 'python', 2019, 5.11, 'python']
 author_list = ['Tommy', 'ChaoChao', 'Wsqstar']
 
-print('输出完整列表：' , list)
-print('输出第二个元素：' , list[1])
-print('输出第二个到第四个元素：' , list[1:3])
-print('输出第三个到最后一个元素：' , list[2:])
-print('输出列表两次：' , author_list * 2)
-print('输出两个列表组合：' , list + author_list)
+# 正数操作
+print('完整列表 list：' , list)
+print('第二个元素 list[1]：' , list[1])
+print('第二个到第四个元素 list[1:3]：' , list[1:3])
+print('第三个到最后一个元素 list[2:]：' , list[2:])
+
+# 倒数操作，此时截取不包含冒号右侧
+print('倒数第二个元素 list[-2]：' , list[-2])
+print('倒数最后三个元素 list[-3:]：' , list[-3:])
+print('倒数第二个到第四个元素 list[-4:-1]：' , list[-4:-1])
+
+# * + 操作
+print('输出列表两次 author_list * 2：' , author_list * 2)
+print('两个列表组合 list + author_list：' , list + author_list)
+```
+
+
+**输出结果**
+```
+完整列表 list： ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+第二个元素 list[1]： algorithm
+第二个到第四个元素 list[1:3]： ['algorithm', 'python']
+第三个到最后一个元素 list[2:]： ['python', 2019, 5.11, 'python']
+倒数第二个元素 list[-2]： 5.11
+倒数最后三个元素 list[-3:]： [2019, 5.11, 'python']
+倒数第二个到第四个元素 list[-4:-1]： ['python', 2019, 5.11]
+输出列表两次 author_list * 2： ['Tommy', 'ChaoChao', 'Wsqstar', 'Tommy', 'ChaoChao', 'Wsqstar']
+两个列表组合 list + author_list： ['play', 'algorithm', 'python', 2019, 5.11, 'python', 'Tommy', 'ChaoChao', 'Wsqstar']
+```
+
+## 基础函数
+
+```Python
+list = ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+int_list = [12, 22, 30, 13, 24, 1, 10, 10.3, -1]
+
+print('列表长度 len(list)：', len(list))
+
+# max() 和 min() 函数只支持列表元素为int和float这种可以计算数值大小的类型
+print('最大值 max(int_list)：', max(int_list))
+print('最小值 min(int_list)：', min(int_list))
 ```
 
 **输出结果**
 ```
-输出完整列表： ['play', 'algorithm', 'python', 2019, 5.11]
-输出第二个元素： algorithm
-输出第二个到第四个元素： ['algorithm', 'python']
-输出第三个到最后一个元素： ['python', 2019, 5.11]
-输出列表两次： ['Tommy', 'ChaoChao', 'Wsqstar', 'Tommy', 'ChaoChao', 'Wsqstar']
-输出两个列表组合： ['play', 'algorithm', 'python', 2019, 5.11, 'Tommy', 'ChaoChao', 'Wsqstar']
+列表长度 len(list)： 6
+最大值 max(int_list)： 30
+最小值 min(int_list)： -1
+```
+
+
+## 基础方法
+
+```Python
+list = ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+author_list = ['Tommy', 'ChaoChao', 'Wsqstar']
+
+list.append(author_list)
+print('在末尾添加新对象 list.append(author_list)：', list)
+list.remove(author_list)
+print("移除某个元素第一个匹配项 list.remove(author_list)：", list)
+list.insert(5, 'Baidu')
+print("在指定位置添加新对象 list.insert(5, 'Baidu')：", list)
+list.extend(author_list)
+print('批量添加另一个列表中的值到末尾 list.extend(author_list)：', list)
+print("统计某个元素在列表中出现的次数 list.count('python')：", list.count('python'))
+print("找出某个元素第一次出现的索引位置 list.index('python')：", list.index('python'))
+list.pop()
+print("移除一个元素，默认最后一个元素 list.pop()：", list)
+list.pop(0)
+# list.pop([index = -1])方法同del，以下例子也可以用del语句：del list[0]
+print("移除第一个元素 list.pop(0)：", list)
+list.reverse()
+print("将列表元素反向 list.reverse()：", list)
+print('列表排序，建议查看菜鸟教程的讲述：' , 'https://www.runoob.com/python3/python3-att-list-sort.html')
+list2 = list.copy()
+print("列表复制,我是list复制来的list2 list.copy()：", list2)
+list2.clear()
+print('list2清空后 list2.clear()：', list2)
+# 复制和使用 = 赋值不同，复制产生了新的列表，对list2的任何操作不影响list
+print('list2清空后的list：', list)
+
+# 使用 = 赋值时，所有的操作都会影响到list本身
+list3 = list
+list3.clear()
+print('list3清空后 list3.clear()：', list3)
+print('list3清空后的list：', list)
+```
+
+**输出结果**
+```
+在末尾添加新对象 list.append(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'python', ['Tommy', 'ChaoChao', 'Wsqstar']]
+移除某个元素第一个匹配项 list.remove(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+在指定位置添加新对象 list.insert(5, 'Baidu')： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python']
+批量添加另一个列表中的值到末尾 list.extend(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao', 'Wsqstar']
+统计某个元素在列表中出现的次数 list.count('python')： 2
+找出某个元素第一次出现的索引位置 list.index('python')： 2
+移除一个元素，默认最后一个元素 list.pop()： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao']
+移除第一个元素 list.pop(0)： ['algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao']
+将列表元素反向 list.reverse()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
+列表排序，建议查看菜鸟教程的讲述： https://www.runoob.com/python3/python3-att-list-sort.html
+列表复制,我是list复制来的list2 list.copy()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
+list2清空后 list2.clear()： []
+list2清空后的list： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
+list3清空后 list3.clear()： []
+list3清空后的list： []
 ```
 
 # 元组 Tuple
+
+## 特点
+*
+
+## 基础操作
+
+```python
+
+```
+
+
+**输出结果**
+```
+
+```
+
+## 基础函数
+
+```Python
+
+```
+
+**输出结果**
+```
+
+```
+
+
+## 基础方法
+
+```Python
+
+```
+
+**输出结果**
+```
+
+```
+
 # 字典 Dict
 # 集合 Set
