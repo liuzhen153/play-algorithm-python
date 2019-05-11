@@ -13,6 +13,7 @@
 * 我们并不完全保证内容的标准性，如遇到有问题的地方还请及时指正
 * 其中很多内容可能来自书籍或网络上的分享，如果冒犯了您的著作权等，请及时指出，我们会第一时间处理
 * 所有实现均用于学习和演示目的，它们的效率将低于很多标准库中的实现
+* 无特殊书名，代码部分均基于`python3`
 
 ## 学习路线
 
@@ -93,3 +94,5 @@
 * 【网站】[The Algorithms - Python](https://github.com/TheAlgorithms/Python)
 * 【网站】[维基百科](https://zh.wikipedia.org)
 * 【网站】[百度百科](https://baike.baidu.com/)
+* 【博客】[SakuraOne](https://www.cnblogs.com/myworld7/p/8449614.html)
+* 【网站】[菜鸟教程](https://www.runoob.com)
