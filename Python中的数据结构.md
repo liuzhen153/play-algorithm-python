@@ -1,5 +1,9 @@
 # 列表 List
 `List`用`[ ]`表示，是Python中使用最频繁且最通用的复合数据类型。
+
+**列表中的正反索引：**
+![列表中的正反索引](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/list_suoyin.png)
+
 ## 特点
 * 列表中每个元素都可变（修改、删除）
 * 列表是有序的，可以用索引去访问指定元素
@@ -112,7 +116,7 @@ print("移除第一个元素 list.pop(0)：", list)
 list.reverse()
 print("将列表元素反向 list.reverse()：", list)
 
-print('列表排序，建议查看菜鸟教程的讲述：' , 'https://www.runoob.com/python3/python3-att-list-sort.html')
+print('列表排序，建议查看菜鸟教程获得更好的讲述：' , 'https://www.runoob.com/python/att-list-sort.html')
 
 list2 = list.copy()
 print("列表复制,我是list复制来的list2 list.copy()：", list2)
@@ -145,7 +149,7 @@ print('list3清空后的list：', list)
 移除第一个元素 list.pop(0)： ['algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao']
 
 将列表元素反向 list.reverse()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
-列表排序，建议查看菜鸟教程的讲述： https://www.runoob.com/python3/python3-att-list-sort.html
+列表排序，建议查看菜鸟教程获得更好的讲述： https://www.runoob.com/python/att-list-sort.html
 
 列表复制,我是list复制来的list2 list.copy()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
 list2清空后 list2.clear()： []
@@ -157,25 +161,62 @@ list3清空后的list： []
 ```
 
 # 元组 Tuple
+`Tuple`用`( )`表示，可以理解为一个固定列表，一旦初始化就不能再修改，只能对元素进行查询。
 
 ## 特点
-*
+* 元素只读，不支持对元素进行添加、修改（删除）
+* 代码更安全
+* 内置大多数方法和`List`差不多
 
 ## 基础操作
 
 ```python
+tuple1 = ('play', 'algorithm', 'python', 2019, 5.11, 'python')
+# 空元组
+empty_tup = ()
+# 只有一个元素的元组，需要最后添加逗号，如果不加逗号，两边的括弧会被认为是数学公式中的小括号
+one_item_tup = ('Tommy',)
 
+print('元组示例：', tuple1)
+print('空元组：', empty_tup)
+print('只有一个元素的元组：', one_item_tup)
+
+# 截取、*、判断元素是否存在、迭代等操作同列表
+print('截取、*、判断元素是否存在、迭代等操作同列表')
+print('两个元组组合，形成新元组 tuple1 + one_item_tup：' , tuple1 + one_item_tup)
 ```
 
 
 **输出结果**
 ```
+元组示例： ('play', 'algorithm', 'python', 2019, 5.11, 'python')
+空元组： ()
+只有一个元素的元组： ('Tommy',)
 
+截取、*、判断元素是否存在、迭代等操作同列表
+
+两个元组组合，形成新元组 tuple1 + one_item_tup： ('play', 'algorithm', 'python', 2019, 5.11, 'python', 'Tommy')
+```
+
+## 无关闭运算符
+任何以逗号分隔的无符号对象，默认为元组
+```python
+m = 'play', 'algorithm', 'python', 18+6.6j, -4.24e93
+x, y = 1, 2
+print('m的值是：', m)
+print('x, y的值是：', x, y)
+```
+
+**输出结果**
+```
+m的值是： ('play', 'algorithm', 'python', (18+6.6j), -4.24e+93)
+x, y的值是： 1 2
 ```
 
 ## 基础函数
 
 ```Python
+print('len(tuple) min(tuple) max(tuple)和列表用法相同')
 
 ```
 
@@ -185,16 +226,8 @@ list3清空后的list： []
 ```
 
 
-## 基础方法
+## 震惊，元组居然能改变？
 
-```Python
-
-```
-
-**输出结果**
-```
-
-```
 
 # 字典 Dict
 # 集合 Set
