@@ -27,6 +27,14 @@ print('倒数第二个到第四个元素 list[-4:-1]：' , list[-4:-1])
 # * + 操作
 print('输出列表两次 author_list * 2：' , author_list * 2)
 print('两个列表组合 list + author_list：' , list + author_list)
+
+# 元素是否存在于列表中
+print('python是否在列表中：', 'python' in list)
+
+# 迭代
+print('迭代输出author_list每一项：')
+for item in author_list:
+    print(item)
 ```
 
 
@@ -36,11 +44,20 @@ print('两个列表组合 list + author_list：' , list + author_list)
 第二个元素 list[1]： algorithm
 第二个到第四个元素 list[1:3]： ['algorithm', 'python']
 第三个到最后一个元素 list[2:]： ['python', 2019, 5.11, 'python']
+
 倒数第二个元素 list[-2]： 5.11
 倒数最后三个元素 list[-3:]： [2019, 5.11, 'python']
 倒数第二个到第四个元素 list[-4:-1]： ['python', 2019, 5.11]
+
 输出列表两次 author_list * 2： ['Tommy', 'ChaoChao', 'Wsqstar', 'Tommy', 'ChaoChao', 'Wsqstar']
 两个列表组合 list + author_list： ['play', 'algorithm', 'python', 2019, 5.11, 'python', 'Tommy', 'ChaoChao', 'Wsqstar']
+
+python是否在列表中： True
+
+迭代输出author_list每一项：
+Tommy
+ChaoChao
+Wsqstar
 ```
 
 ## 基础函数
@@ -72,24 +89,34 @@ author_list = ['Tommy', 'ChaoChao', 'Wsqstar']
 
 list.append(author_list)
 print('在末尾添加新对象 list.append(author_list)：', list)
+
 list.remove(author_list)
 print("移除某个元素第一个匹配项 list.remove(author_list)：", list)
+
 list.insert(5, 'Baidu')
 print("在指定位置添加新对象 list.insert(5, 'Baidu')：", list)
+
 list.extend(author_list)
 print('批量添加另一个列表中的值到末尾 list.extend(author_list)：', list)
+
 print("统计某个元素在列表中出现的次数 list.count('python')：", list.count('python'))
+
 print("找出某个元素第一次出现的索引位置 list.index('python')：", list.index('python'))
+
 list.pop()
 print("移除一个元素，默认最后一个元素 list.pop()：", list)
 list.pop(0)
 # list.pop([index = -1])方法同del，以下例子也可以用del语句：del list[0]
 print("移除第一个元素 list.pop(0)：", list)
+
 list.reverse()
 print("将列表元素反向 list.reverse()：", list)
+
 print('列表排序，建议查看菜鸟教程的讲述：' , 'https://www.runoob.com/python3/python3-att-list-sort.html')
+
 list2 = list.copy()
 print("列表复制,我是list复制来的list2 list.copy()：", list2)
+
 list2.clear()
 print('list2清空后 list2.clear()：', list2)
 # 复制和使用 = 赋值不同，复制产生了新的列表，对list2的任何操作不影响list
@@ -97,6 +124,7 @@ print('list2清空后的list：', list)
 
 # 使用 = 赋值时，所有的操作都会影响到list本身
 list3 = list
+print('我是赋值来的list3：', list3)
 list3.clear()
 print('list3清空后 list3.clear()：', list3)
 print('list3清空后的list：', list)
@@ -106,17 +134,24 @@ print('list3清空后的list：', list)
 ```
 在末尾添加新对象 list.append(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'python', ['Tommy', 'ChaoChao', 'Wsqstar']]
 移除某个元素第一个匹配项 list.remove(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+
 在指定位置添加新对象 list.insert(5, 'Baidu')： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python']
 批量添加另一个列表中的值到末尾 list.extend(author_list)： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao', 'Wsqstar']
+
 统计某个元素在列表中出现的次数 list.count('python')： 2
 找出某个元素第一次出现的索引位置 list.index('python')： 2
+
 移除一个元素，默认最后一个元素 list.pop()： ['play', 'algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao']
 移除第一个元素 list.pop(0)： ['algorithm', 'python', 2019, 5.11, 'Baidu', 'python', 'Tommy', 'ChaoChao']
+
 将列表元素反向 list.reverse()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
 列表排序，建议查看菜鸟教程的讲述： https://www.runoob.com/python3/python3-att-list-sort.html
+
 列表复制,我是list复制来的list2 list.copy()： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
 list2清空后 list2.clear()： []
 list2清空后的list： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
+
+我是赋值来的list3： ['ChaoChao', 'Tommy', 'python', 'Baidu', 5.11, 2019, 'python', 'algorithm']
 list3清空后 list3.clear()： []
 list3清空后的list： []
 ```
