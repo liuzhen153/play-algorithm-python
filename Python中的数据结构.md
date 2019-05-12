@@ -437,40 +437,87 @@ dict3清空后的dict： {}
 
 # 集合 Set
 
-`List`用`[ ]`表示，是Python中使用最频繁且最通用的复合数据类型。
+`Set`和字典一样用`{ }`表示，不同的是其元素不是键值对，而是一个无序的不重复元素序列。
+
+集合更接近数学上集合的概念，可以通过集合判断数据的从属关系，也可以通过集合把数据结构中重复的元素减掉。集合可做集合运算，可添加和删除元素。
 
 
 ## 特点
-*
+* 元素无序且不重复
+* 可做集合运算
 
 ## 基础操作
 
 ```python
+print('创建一个空集合必须用set()函数，因为如果直接用{}是用来创建一个空字典的：set()：', set())
 
+print('将一个字符串转为集合set(Str)：', set('Tommy'))
+list = ['play', 'algorithm', 'python', 2019, 5.11, 'python']
+# 集合中元素无序且不重复，python将只会留下一个
+set1 = set(list)
+print('将一个列表转为集合 set(list)：', set1)
+
+# 判断元素是否在集合内
+print("python是否在集合内 'python' in set1：", 'python' in set1)
+
+# 迭代
+print('迭代set :')
+for item in set1:
+    print(item)
+
+# 集合运算
+set2 = {1, 2, 3, 4, 5, 6}
+set3 = {1, 2, 7, 8}
+
+print('减法，set2中包含但set3中不包含的元素 set2 - set3：', set2 - set3)
+print('按位或运算，set2和set3中包含的所有元素 set2 | set3：', set2 | set3)
+print('按位与运算，set2和set3中都包含的元素 set2 & set3：', set2 & set3)
+print('按位异或运算，set2和set3中不同时包含的元素 set2 ^ set3：', set2 ^ set3)
 ```
 
 
 **输出结果**
 ```
+创建一个空集合必须用set()函数，因为如果直接用{}是用来创建一个空字典的：set()： set()
 
+将一个字符串转为集合： {'y', 'o', 'T', 'm'}
+
+将一个列表转为集合： {'algorithm', 2019, 5.11, 'python', 'play'}
+
+python是否在集合内 'python' in set1： True
+
+迭代set :
+algorithm
+2019
+5.11
+python
+play
+
+减法，set2中包含但set3中不包含的元素 set2 - set3： {3, 4, 5, 6}
+按位或运算，set2和set3中包含的所有元素 set2 | set3： {1, 2, 3, 4, 5, 6, 7, 8}
+按位与运算，set2和set3中都包含的元素 set2 & set3： {1, 2}
+按位异或运算，set2和set3中不同时包含的元素 set2 ^ set3： {3, 4, 5, 6, 7, 8}
 ```
 
 ## 基础函数
 
 ```Python
-
+set1 = {1, 2, 3, 4, 5, 6}
+print('set的长度 len(set)：', len(set1))
 ```
 
 **输出结果**
 ```
-
+set的长度 len(set)： 6
 ```
 
 
 ## 基础方法
 
 ```Python
+set1 = {1, 2, 3, 4, 5, 6}
 
+print('添加元素 set.add')
 ```
 
 **输出结果**
