@@ -2,6 +2,7 @@
 `List`用`[ ]`表示，是Python中使用最频繁且最通用的复合数据类型。
 
 **列表中的正反索引：**
+
 ![列表中的正反索引](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/list_suoyin.png)
 
 ## 特点
@@ -75,6 +76,9 @@ print('列表长度 len(list)：', len(list))
 # max() 和 min() 函数只支持列表元素为int和float这种可以计算数值大小的类型
 print('最大值 max(int_list)：', max(int_list))
 print('最小值 min(int_list)：', min(int_list))
+
+# 将一个对象快速转为List
+print("Str对象转为List list('Tommy')：", list('Tommy'))
 ```
 
 **输出结果**
@@ -82,6 +86,7 @@ print('最小值 min(int_list)：', min(int_list))
 列表长度 len(list)： 6
 最大值 max(int_list)： 30
 最小值 min(int_list)： -1
+Str对象转为List list('Tommy')： ['T', 'o', 'm', 'm', 'y']
 ```
 
 
@@ -214,6 +219,245 @@ x, y的值是： 1 2
 
 ```Python
 print('len(tuple) min(tuple) max(tuple)和列表用法相同')
+print("Str对象转为Tuple tuple('Tommy')：", tuple('Tommy'))
+```
+
+**输出结果**
+```
+
+len(tuple) min(tuple) max(tuple)和列表用法相同
+Str对象转为Tuple tuple('Tommy')： ('T', 'o', 'm', 'm', 'y')
+```
+
+
+## 震惊，元组居然能改变？
+先来看一个例子：
+
+```python
+tuple = ('play', 'algorithm', 'python', ['Tommy','ChaoChao'])
+
+print('原始tuple为：', tuple)
+
+# 修改Tommy为liuzhen153，ChaoChao为chaochaoZ
+tuple[3][0] = 'liuzhen153'
+tuple[3][1] = 'chaochaoZ'
+print(tuple)
+print('修改了某些内容的tuple为：', tuple)
+
+# 在['liuzhen153', 'chaochaoZ']里新增wsqStar
+tuple[3].append('wsqStar')
+print('添加了某些内容的tuple为：', tuple)
+```
+
+**输出结果**
+
+```
+原始tuple为： ('play', 'algorithm', 'python', ['Tommy', 'ChaoChao'])
+('play', 'algorithm', 'python', ['liuzhen153', 'chaochaoZ'])
+修改了某些内容的tuple为： ('play', 'algorithm', 'python', ['liuzhen153', 'chaochaoZ'])
+添加了某些内容的tuple为： ('play', 'algorithm', 'python', ['liuzhen153', 'chaochaoZ', 'wsqStar'])
+```
+
+**分析**
+
+这里看似元组中的元素改变了，其实可以看出，元组中的第四个元素是一个列表，我们改变的是列表中的值，元组所指的这个元素是『列表』并没有改变。
+
+这个涉及到`Python`中的可变对象和不可变对象，`List`是可变对象，`Tuple`便是不可变对象。
+
+# 字典 Dict
+
+`Dict`用`{ }`表示，是可变的，且可存储任意类型对象，其概念基于生活中的字典原型，使用『名称-内容』对数据进行构建。
+
+
+## 特点
+* 字典中的数据必须以键值对（key-value）形式出现
+* 键不可重复（键重复时，只会记住该键对应的最后一个值）；值可重复
+* 键（key）是不可变对象，不能进行修改；值（value）是可以修改的，可以是任意对象
+
+
+## 基础操作
+`Dict`根据`key`来计算`value`的存储位置。如果`key`可变，每次计算相同`key`得出的结果不同，那`Dict`内部就乱套了。
+
+```python
+# 键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行
+dict1 = {'name':'Tommy', 'age':25, 'sex':'male', 'extra':'unmarried'}
+dict2 = {38.5:'Today is hot', ('x','y'):(1,2)}
+print('dict1：', dict1)
+print('dict2：', dict2)
+
+# 访问某个元素
+print("dict1里的name dict1['name']：", dict1['name'])
+print("dict2里的('x','y') dict2[('x','y')]：", dict2[('x','y')])
+
+# 修改某个元素
+dict1['age'] = 26
+print("修改dict1里的age为26 dict1['age'] = 26：", dict1)
+
+# 删除某个元素
+del(dict1['extra'])
+print("删除dict1里的extra del(dict1['extra'])：", dict1)
+
+# 同一个键出现多次，只会记住最后一次
+dict3 = {'name':'Tommy', 'age':25, 'name':'liuzhen153', 'name':'Liuzhen'}
+print('dict3：', dict3)
+
+# 键是否在dict中存在
+print("键name是否在dict1中存在'name' in dict1 ：" , 'name' in dict1)
+
+# 迭代
+print('迭代输出dict1每一项：')
+for key in dict1:
+    print(key, dict1[key])
+```
+
+
+**输出结果**
+```
+dict1： {'name': 'Tommy', 'age': 25, 'sex': 'male', 'extra': 'unmarried'}
+dict2： {38.5: 'Today is hot', ('x', 'y'): (1, 2)}
+
+dict1里的name dict1['name']： Tommy
+dict2里的('x','y') dict2[('x','y')]： (1, 2)
+
+修改dict1里的age为26 dict1['age'] = 26： {'name': 'Tommy', 'age': 26, 'sex': 'male', 'extra': 'unmarried'}
+删除dict1里的extra del(dict1['extra'])： {'name': 'Tommy', 'age': 26, 'sex': 'male'}
+
+dict3： {'name': 'Liuzhen', 'age': 25}
+
+键name是否在dict1中存在'name' in dict1 ： True
+
+迭代输出dict1每一项：
+name Tommy
+age 26
+sex male
+```
+
+## 基础函数
+
+```Python
+dict = {'name':'Tommy', 'age':25, 'sex':'male', 'extra':'unmarried'}
+print("计算dict长度，即键的总数 len(dict)：", len(dict))
+```
+
+**输出结果**
+```
+计算dict长度，即键的总数 len(dict)： 4
+```
+
+
+## 基础方法
+
+```Python
+dict = {'name':'Tommy', 'age':25, 'sex':'male', 'extra':'unmarried'}
+dict1 = {'age':27, 'company':'Baidu'}
+
+print("返回所有键 dict.keys()：", dict.keys())
+
+print("判断dict中是否存在某个键 dict.__contains__('tall')：", dict.__contains__('tall'))
+
+print("返回指定键的值，如果值不在字典中返回default值 dict.get(key, default=None)：", dict.get('lover','Chaochao'))
+print("dict.get()不会修改dict：", dict)
+
+print("返回指定键的值，如果值不在字典中返回default值并新增该键值对 dict.setdefault(key, default=None)：", dict.setdefault('lover','Chaochao'))
+print("dict.setdefault()会修改dict：", dict)
+
+print('dict.items()返回可供遍历的键值对：')
+for k,v in dict.items():
+    print(k, v)
+
+dict.update(dict1)
+print('dict.update(dict1)会将dict1中的键/值更新到dict里，相同键会更新值，不存在的会新增：', dict)
+
+print('返回字典中所有的值 dcit.values()：', dict.values())
+
+p = dict.pop('tall', 'not exits this key')
+print("dict.pop(key[,default]) 删除key 所对应的值，返回值为被删除的值。key值不给出时返回default值 dict.pop('tall', 'not exits this key')：", p)
+
+print('现在的dict：', dict)
+
+p = dict.popitem()
+print("随机删除并返回被删除的一组键值对，如果字典已为空，会出现异常dict.popitem()：", p)
+
+print('随机删除键值对后的dict：', dict)
+
+
+dict_copy = dict.copy()
+print('我是dict复制来的dict_copy：', dict_copy)
+
+dict_copy.clear()
+print('dict_copy清空后 dict_copy.clear()：', dict_copy)
+# 复制和使用 = 赋值不同，复制产生了新的字典，对dict_copy的任何操作不影响dict
+print('dict_copy清空后的dict：', dict)
+
+# 使用 = 赋值时，所有的操作都会影响到dict本身
+dict3 = dict
+print('我是赋值来的dict3：', dict3)
+dict3.clear()
+print('dict3清空后 dict3.clear()：', dict3)
+print('dict3清空后的dict：', dict)
+```
+
+**输出结果**
+```
+返回所有键 dict.keys()： dict_keys(['name', 'age', 'sex', 'extra'])
+判断dict中是否存在某个键 dict.__contains__('tall')： False
+
+返回指定键的值，如果值不在字典中返回default值 dict.get(key, default=None)： Chaochao
+dict.get()不会修改dict： {'name': 'Tommy', 'age': 25, 'sex': 'male', 'extra': 'unmarried'}
+
+返回指定键的值，如果值不在字典中返回default值并新增该键值对 dict.setdefault(key, default=None)： Chaochao
+dict.setdefault()会修改dict： {'name': 'Tommy', 'age': 25, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao'}
+
+dict.items()返回可供遍历的键值对：
+name Tommy
+age 25
+sex male
+extra unmarried
+lover Chaochao
+
+dict.update(dict1)会将dict1中的键/值更新到dict里，相同键会更新值，不存在的会新增： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao', 'company': 'Baidu'}
+
+返回字典中所有的值 dcit.values()： dict_values(['Tommy', 27, 'male', 'unmarried', 'Chaochao', 'Baidu'])
+
+dict.pop(key[,default]) 删除key 所对应的值，返回值为被删除的值。key值不给出时返回default值 dict.pop('tall', 'not exits this key')： not exits this key
+现在的dict： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao', 'company': 'Baidu'}
+
+随机删除并返回被删除的一组键值对，如果字典已为空，会出现异常dict.popitem()： ('company', 'Baidu')
+随机删除键值对后的dict： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao'}
+
+我是dict复制来的dict_copy： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao'}
+
+dict_copy清空后 dict_copy.clear()： {}
+dict_copy清空后的dict： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao'}
+
+我是赋值来的dict3： {'name': 'Tommy', 'age': 27, 'sex': 'male', 'extra': 'unmarried', 'lover': 'Chaochao'}
+dict3清空后 dict3.clear()： {}
+dict3清空后的dict： {}
+```
+
+# 集合 Set
+
+`List`用`[ ]`表示，是Python中使用最频繁且最通用的复合数据类型。
+
+
+## 特点
+*
+
+## 基础操作
+
+```python
+
+```
+
+
+**输出结果**
+```
+
+```
+
+## 基础函数
+
+```Python
 
 ```
 
@@ -223,8 +467,13 @@ print('len(tuple) min(tuple) max(tuple)和列表用法相同')
 ```
 
 
-## 震惊，元组居然能改变？
+## 基础方法
 
+```Python
 
-# 字典 Dict
-# 集合 Set
+```
+
+**输出结果**
+```
+
+```
