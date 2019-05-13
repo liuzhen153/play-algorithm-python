@@ -36,8 +36,8 @@ def bubble_sort(list = []):
     return list
 ```
 
-## 试运行
-```bash
+## 测试
+```
 $ python bubble_sort.py
 请输入需要排序的数字，用英文半角逗号隔开，直接回车则使用默认数据：
 需要排序的数字为：
