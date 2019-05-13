@@ -59,12 +59,12 @@
 ### 算法实现
 
 #### 排序
-* [冒泡排序 `Bubble_sort`](./bubble_sort)
-* [选择排序 `Selection_sort`](./selection_sort)
-* 堆排序
-* 插入排序
+* [冒泡排序 `Bubble Sort`](./bubble_sort)
+* [选择排序 `Selection Sort`](./selection_sort)
+* [插入排序 `Insertion Sort`](./insertion_sort)
 * 归并排序
 * 快速排序
+* 堆排序
 
 #### 数组
 * 线性查找
@@ -108,7 +108,7 @@
 2019-05-10|完成：数据结构 - 栈、队列 <br>新增：Python中的数据结构（规划）
 2019-05-11|完成：Python中的数据结构 - 列表、元组
 2019-05-12|完成：Python中的数据结构 - 字典
-2019-05-13|完成：Python中的数据结构 - 集合、算法实现 - 冒泡排序、选择排序
+2019-05-13|完成：Python中的数据结构 - 集合、算法实现 - 冒泡排序、选择排序、插入排序
 
 
 ## 参考附录
