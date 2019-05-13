@@ -4,7 +4,7 @@ def bubble_sort(list=[]):
     :return: 排序结果
     '''
     list_len = len(list)
-    for i in range(list_len - 1):          # 需要运行 n - 1 次
+    for i in range(list_len - 1):          # 剩一个元素时不需要再比较
         for j in range(list_len - 1 - i):  # 每次都需要两两对比前面未排序完成的元素
             if list[j + 1] < list[j]:        # 比较相邻元素
                 list[j], list[j + 1] = list[j + 1], list[j]  # 根据大小调换元素位置
