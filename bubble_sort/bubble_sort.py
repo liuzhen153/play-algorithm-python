@@ -11,6 +11,7 @@ def bubble_sort(list = []):
     return list
 
 if __name__ == '__main__':
+    print('冒泡排序>>>')
     user_input = input('请输入需要排序的数字，用英文半角逗号隔开，直接回车则使用默认数据：')
     example_list = 8, -5, 10, 6, -23, 15, 45
     unsorted_list = list(example_list) if user_input.strip() == '' else [int(item) for item in user_input.split(',')]
