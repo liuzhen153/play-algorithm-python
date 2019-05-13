@@ -21,7 +21,7 @@ def insertion_sort_2(list):
     list_len = len(list)
     for i in range(1, list_len):            # 第一个元素默认为已被排序
         j = i - 1                           # 记录往前扫描的key
-        while j >= 0 and list[i] < list[j]: # 如果已排序的序列从后往前扫描，发现当前比新元素大，则往后移一位
+        while j >= 0 and list[i] < list[j]:  # 如果已排序的序列从后往前扫描，发现当前比新元素大，则往后移一位
             list[j + 1] = list[j]
             j -= 1
         list[j + 1] = list[i]                # 新元素添加到找到的key后方，前是小，后是大
@@ -34,7 +34,8 @@ def insertion_sort_3(list):
     :return: 排序结果
     '''
     for i in range(1, len(list)):                       # 第一个元素默认为已被排序
-        while i > 0 and list[i - 1] > list[i]:          # 将新元素和前方元素一一对比，若新元素比较小，则交换两者位置
+        # 将新元素和前方元素一一对比，若新元素比较小，则交换两者位置
+        while i > 0 and list[i - 1] > list[i]:
             list[i], list[i - 1] = list[i - 1], list[i]
             i -= 1
     return list
