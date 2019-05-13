@@ -1,7 +1,7 @@
-- [列表 List](#列表_List)
-- [元组 Tuple](#元组_Tuple)
-- [字典 Dict](#字典_Dict)
-- [集合 Set](#集合_Set)
+- [列表 List](#列表-List)
+- [元组 Tuple](#元组-Tuple)
+- [字典 Dict](#字典-Dict)
+- [集合 Set](#集合-Set)
 
 # 列表 List
 `List`用`[ ]`表示，是Python中使用最频繁且最通用的复合数据类型。
