@@ -1,7 +1,7 @@
 # 插入排序
 
 ## 示意图
-![冒泡排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/iinsertion_sort.gif)
+![冒泡排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/insertion_sort.gif)
 
 ## 运作步骤
 1. 第一个元素可被认为已被排序。
