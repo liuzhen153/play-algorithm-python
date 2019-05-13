@@ -4,10 +4,10 @@ def selection_sort(list):
     :return: 排序结果
     '''
     list_len = len(list)
-    for i in range(list_len):           # 需要对比n - 1次
+    for i in range(list_len):
         min_index = i                   # 假设当前位置是最小元素位置，min_index = i
         for j in range(i + 1, list_len):  # 遍历后面的元素
-            if list[i] > list[j]:       # 如果后面元素有比当前位置小的值，则将min_index更新为这个元素的位置
+            if list[j] < list[i]:       # 如果后面元素有比当前位置小的值，则将min_index更新为这个元素的位置
                 min_index = j
         if not min_index == i:          # 如果发现最小元素的键不是i，则将他们两个的值交换
             list[i], list[min_index] = list[min_index], list[i]

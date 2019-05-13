@@ -10,7 +10,7 @@
 
 ## 助记码
 ```
-i∈[0,N-1)               //循环N-1遍
+i∈[0,N)                 //循环N遍
   j∈[i,N-1)             //每遍循环要处理的无序部分
     swap(i,min_index)   //将最小（大）值和起始位置交换
 ```
@@ -28,7 +28,7 @@ def selection_sort(list):
     :return: 排序结果
     '''
     list_len = len(list)
-    for i in range(list_len):           # 需要对比n - 1次
+    for i in range(list_len):
         min_index = i                   # 假设当前位置是最小元素位置，min_index = i
         for j in range(i+1, list_len):  # 遍历后面的元素
             if list[i] > list[j]:       # 如果后面元素有比当前位置小的值，则将min_index更新为这个元素的位置
