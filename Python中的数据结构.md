@@ -516,11 +516,115 @@ set的长度 len(set)： 6
 
 ```Python
 set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+set1.add(0)
+print('添加元素 set1.add(0)', set1)
 
-print('添加元素 set.add')
+# 计算差集，效果同 -
+print('返回两个集合的差集 set1.difference(set2)', set1.difference(set2))
+
+print('返回两个集合的差集 set2.difference(set1)', set2.difference(set1))
+
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+# 移除两个集合中都存在的元素
+set1.difference_update(set2)
+print('移除set1中set1和set2都存在的元素 set1.difference_update(set2)', set1)
+
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+set2.difference_update(set1)
+print('移除set2中set1和set2都存在的元素 set2.difference_update(set1)', set2)
+
+
+# 移除元素
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+# 移除指定元素
+set1.discard(10)
+print("移除的元素不存在时不报错 set1.discard(10)：", set1)
+set1.remove(6)
+print("移除的元素不存在时报错 set1.remove(6)：", set1)
+# 随机移除元素
+set1.pop()
+print('随机移除元素后的set1 set1.pop()：', set1)
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+set3 = {5, 6, 10}
+set4 = {5, 6, 7, 8, 9}
+print('返回多个集合的交集，set1不变 set1.intersection(set2,set3,set4)：', set1.intersection(set2,set3,set4), set1)
+
+set1.intersection_update(set2,set3,set4)
+print('set1变为set1与其他集合的交集 set1.intersection_update(set2,set3,set4)：', set1)
+
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6}
+
+print('判断两个集合是否包含相同元素，如果包含返回False set2.isdisjoint(set1)：', set2.isdisjoint(set1))
+
+# 子集判断
+print('判断set1是否是set2的子集 set1.issubset(set2)：', set1.issubset(set2))
+print('判断set2是否是set1的子集 set2.issubset(set1)：', set2.issubset(set1))
+
+# 父集判断
+print('判断set1是否是set2的父集 set1.issuperset(set2)：', set1.issuperset(set2))
+print('判断set2是否是set1的父集 set2.issuperset(set1)：', set2.issuperset(set1))
+
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 9}
+print("异或运算 set1.symmetric_difference(set2)：", set1.symmetric_difference(set2))
+set1.symmetric_difference_update(set2)
+print("异或运算后将相同部分移除，不同部分添加到set1中 set1.symmetric_difference_update(set2)：", set1)
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {4, 5, 6, 7, 8, 9}
+set3 = {5, 6, 10}
+print('计算集合的合集 set1.union(set2, set3)：', set1.union(set2, set3))
+
+set1 = {1, 2, 3, 4, 5, 6}
+set2 = {5, 6, 10}
+set1.update(set2)
+print('将set2中的元素添加到set1中 set1.update(set2)：', set1)
+
+print('set.clear() 和 set.copy()用法同列表')
 ```
 
 **输出结果**
 ```
+添加元素 set1.add(0) {0, 1, 2, 3, 4, 5, 6}
 
+返回两个集合的差集 set1.difference(set2) {0, 1, 2, 3}
+返回两个集合的差集 set2.difference(set1) {8, 9, 7}
+
+移除set1中set1和set2都存在的元素 set1.difference_update(set2) {1, 2, 3}
+移除set2中set1和set2都存在的元素 set2.difference_update(set1) {7, 8, 9}
+
+移除的元素不存在时不报错 set1.discard(10)： {1, 2, 3, 4, 5, 6}
+移除的元素不存在时报错 set1.remove(6)： {1, 2, 3, 4, 5}
+随机移除元素后的set1 set1.pop()： {2, 3, 4, 5}
+
+返回多个集合的交集，set1不变 set1.intersection(set2,set3,set4)： {5, 6} {1, 2, 3, 4, 5, 6}
+set1变为set1与其他集合的交集 set1.intersection_update(set2,set3,set4)： {5, 6}
+
+判断两个集合是否包含相同元素，如果包含返回False set2.isdisjoint(set1)： False
+
+判断set1是否是set2的子集 set1.issubset(set2)： False
+判断set2是否是set1的子集 set2.issubset(set1)： True
+
+判断set1是否是set2的父集 set1.issuperset(set2)： True
+判断set2是否是set1的父集 set2.issuperset(set1)： False
+
+异或运算 set1.symmetric_difference(set2)： {1, 2, 3, 9}
+异或运算后将相同部分移除，不同部分添加到set1中 set1.symmetric_difference_update(set2)： {1, 2, 3, 9}
+
+计算集合的合集 set1.union(set2, set3)： {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+将set2中的元素添加到set1中 set1.update(set2)： {1, 2, 3, 4, 5, 6, 10}
+
+set.clear() 和 set.copy()用法同列表
 ```
