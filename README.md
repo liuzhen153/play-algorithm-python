@@ -62,7 +62,7 @@
 * [冒泡排序 `Bubble Sort`](./bubble_sort)
 * [选择排序 `Selection Sort`](./selection_sort)
 * [插入排序 `Insertion Sort`](./insertion_sort)
-* 归并排序
+* [归并排序 `Merge Sort`](./merge_sort)
 * 快速排序
 * 堆排序
 
@@ -109,6 +109,7 @@
 2019-05-11|完成：Python中的数据结构 - 列表、元组
 2019-05-12|完成：Python中的数据结构 - 字典
 2019-05-13|完成：Python中的数据结构 - 集合、算法实现 - 冒泡排序、选择排序、插入排序
+2019-05-14|完成：算法实现 - 归并排序
 
 
 ## 参考附录
