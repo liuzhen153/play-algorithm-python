@@ -109,7 +109,7 @@
 2019-05-11|完成：Python中的数据结构 - 列表、元组
 2019-05-12|完成：Python中的数据结构 - 字典
 2019-05-13|完成：Python中的数据结构 - 集合、算法实现 - 冒泡排序、选择排序、插入排序
-2019-05-14|完成：算法实现 - 归并排序
+2019-05-14|完成：算法实现 - 归并排序；[PR for TheAlgorithms/Python](https://github.com/TheAlgorithms/Python/pull/804)
 
 
 ## 参考附录
