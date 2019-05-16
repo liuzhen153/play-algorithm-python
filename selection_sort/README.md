@@ -1,7 +1,7 @@
 # 选择排序
 
 ## 示意图
-![冒泡排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/selection_sort.gif)
+![选择排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/selection_sort.gif)
 
 ## 运作步骤
 1. 从第一个元素开始寻找最小（大）元素，存放在首位
