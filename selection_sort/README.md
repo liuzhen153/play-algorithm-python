@@ -1,4 +1,4 @@
-# 冒泡排序
+# 选择排序
 
 ## 示意图
 ![冒泡排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/selection_sort.gif)
