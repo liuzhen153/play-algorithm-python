@@ -1,17 +1,12 @@
 # 快速排序
 
 ## 示意图
-
+![选择排序示意图](https://raw.githubusercontent.com/liuzhen153/play-algorithm-python/master/images/quick_sort.gif)
 
 ## 运作步骤
-1. 设置两个变量i、j，排序开始的时候：i=0，j=N-1；
-2. 以第一个数组元素作为关键数据，赋值给key，即key=A[0]；
-3. 从j开始向前搜索，即由后开始向前搜索(j--)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；
-4. 从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；
-5. 重复第3、4步，直到i=j；(3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i， j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束)。
-
-## 助记码
-
+1. 挑选基准值：从数列中挑出一个元素，称为“基准”（pivot）
+2. 分割：重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（与基准值相等的数可以到任何一边）。在这个分割结束之后，对基准值的排序就已经完成
+3. 递归排序子序列：递归地将小于基准值元素的子序列和大于基准值元素的子序列排序。
 
 ## 算法分析
 * 最坏时间复杂度	O(n^2)
@@ -19,4 +14,58 @@
 * 平均时间复杂度	O(nlogn)
 
 ## 实现
+```Python
+def quick_sort(list):
+    '''Python中的快速排序算法简单实现
+    :param list: 需要排序的数字列表
+    :return: 排序结果
+    '''
+    if len(list) <= 1:
+        return list
+    less, greater, pivot = [], [], list.pop()
+    for item in list:
+        if item < pivot:
+            less.append(item)
+        else:
+            greater.append(item)
+    list.append(pivot)
+    return quick_sort(less) + [pivot] + quick_sort(greater)
+
+
+def quick_sort_in_place(list):
+    '''Python中的快速排序算法原地排序版本实现
+    :param list: 需要排序的数字列表
+    :return: 排序结果
+    '''
+    def partition(list, start, end):
+        pivot = list[end]
+        for j in range(start, end):
+            if list[j] < pivot:
+                list[start], list[j] = list[j], list[start]
+                start += 1
+        list[start], list[end] = list[end], list[start]
+        return start
+
+    def sort(list, start, end):
+        if start >= end:
+            return
+        p = partition(list, start, end)
+        sort(list, start, p - 1)
+        sort(list, p + 1, end)
+
+    sort(list, 0, len(list) - 1)
+    return list
+```
+
 ## 测试
+```
+$ python quick_sort.py
+快速排序>>>
+请输入需要排序的数字，用英文半角逗号隔开，直接回车则使用默认数据：
+需要排序的数字为：
+8,-5,10,6,-23,15,45,20,16
+quick_sort排序结果：
+-23,-5,6,8,10,15,16,20,45
+quick_sort_in_place排序结果：
+-23,-5,6,8,10,15,16,20,45
+```
