@@ -63,7 +63,7 @@
 * [选择排序 `Selection Sort`](./selection_sort)
 * [插入排序 `Insertion Sort`](./insertion_sort)
 * [归并排序 `Merge Sort`](./merge_sort)
-* 快速排序
+* [快速排序 `Quick Sort`](./quick_sort)
 * 堆排序
 
 #### 数组
@@ -110,6 +110,7 @@
 2019-05-12|完成：Python中的数据结构 - 字典
 2019-05-13|完成：Python中的数据结构 - 集合、算法实现 - 冒泡排序、选择排序、插入排序
 2019-05-14|完成：算法实现 - 归并排序；[PR for TheAlgorithms/Python](https://github.com/TheAlgorithms/Python/pull/804)
+2019-05-29|完成：算法实现 - 快速排序
 
 
 ## 参考附录
